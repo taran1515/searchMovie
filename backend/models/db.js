@@ -1,5 +1,5 @@
 const mysql = require("mysql2/promise");
-const config = require("../config/database");
+const config = require("../config/config");
 
 async function createConnection() {
   const connection = await mysql.createConnection({
@@ -29,7 +29,7 @@ async function query(sql, params) {
 
   await connection.query("USE movieFinder");
 
-  const res = await connection.execute(sql, params);
+  const res = await connection.query(sql, params);
 
   return res[0];
 }

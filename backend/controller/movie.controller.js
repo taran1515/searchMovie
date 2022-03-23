@@ -14,7 +14,6 @@ const searchMovieController = async (req, res, next) => {
       .status(CREATED_HTTP_STATUS_CODE)
       .json({ success: true, response: movies });
   } catch (e) {
-    // console.error(e);
     return res.status(BAD_REQUEST_HTTP_STATUS_CODE).json({ ...e });
   }
 };
