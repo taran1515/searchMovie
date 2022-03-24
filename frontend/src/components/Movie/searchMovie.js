@@ -88,9 +88,10 @@ export class SearchMovieTab extends React.Component {
   };
 
   handlePrevious = () => {
+    console.log();
     const { offset, limit } = this.state;
 
-    if (offset === 0) {
+    if (offset < 0) {
       return;
     }
 
@@ -100,9 +101,7 @@ export class SearchMovieTab extends React.Component {
   handleNext = () => {
     const { offset, limit } = this.state;
 
-    console.log(offset, limit);
-
-    if (offset === 0) {
+    if (offset < 0) {
       return;
     }
 

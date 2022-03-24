@@ -5,7 +5,7 @@ export default class Fetch {
     let headers = Object.assign({}, options.headers ?? {});
 
     headers["Content-Type"] = "application/json";
-    const body = JSON.stringify(options.data);
+    const body = JSON.stringify(data);
 
     let fetchOptions = {
       method: method,
