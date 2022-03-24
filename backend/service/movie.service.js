@@ -35,7 +35,7 @@ const searchMovies = async (searchKeyword, limit, offset) => {
       })
     );
 
-    return { movies };
+    return { movies: movies.slice(0, limit + 1) };
   } else {
     return { movies };
   }

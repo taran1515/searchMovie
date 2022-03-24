@@ -33,13 +33,16 @@ export class SearchMovieTab extends React.Component {
     };
     const data = await handleMovieSearch(body);
 
-    if (data.success === true) {
+    if (data.response.length !== 0) {
       this.setState({
         filteredMovies: data.response,
       });
       this.openNotification("Successfully Fetch Movies");
     } else {
-      this.openNotification("Failed  to Fetch Movies");
+      this.openNotification(
+        "Could not find any movie with given title",
+        "error"
+      );
     }
   };
 
@@ -88,10 +91,9 @@ export class SearchMovieTab extends React.Component {
   };
 
   handlePrevious = () => {
-    console.log();
     const { offset, limit } = this.state;
 
-    if (offset < 0) {
+    if (offset - limit < 0) {
       return;
     }
 
@@ -101,7 +103,7 @@ export class SearchMovieTab extends React.Component {
   handleNext = () => {
     const { offset, limit } = this.state;
 
-    if (offset < 0) {
+    if (offset + limit < 0) {
       return;
     }
 
