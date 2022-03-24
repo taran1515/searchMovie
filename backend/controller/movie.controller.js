@@ -7,9 +7,9 @@ const {
 
 const searchMovieController = async (req, res, next) => {
   try {
-    const { title, limit, offset } = req.body;
+    const { searchKeyword, limit, offset } = req.body;
 
-    const { movies } = await searchMovies(title, limit, offset);
+    const { movies } = await searchMovies(searchKeyword, limit, offset);
     res
       .status(CREATED_HTTP_STATUS_CODE)
       .json({ success: true, response: movies });

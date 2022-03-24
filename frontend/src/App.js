@@ -1,10 +1,11 @@
 import "./App.css";
-import { SearchMovie } from "./components/Movie/index";
+import { MoviePanel } from "./components/Movie/index";
+import "antd/dist/antd.css";
 
 function App() {
   return (
     <div className="App">
-      <SearchMovie></SearchMovie>
+      <MoviePanel></MoviePanel>
     </div>
   );
 }

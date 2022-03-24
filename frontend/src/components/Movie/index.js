@@ -1,31 +1,27 @@
-import React from "react";
-import { Form, Input, Button, Checkbox, Row, Col, notification } from "antd";
-import Notification from "../../utils/helper";
-// import loginImg from "../../login.svg";
+import React, { Component } from "react";
+import { Tabs, Select } from "antd";
 
-export class SearchMovie extends React.Component {
+import SearchMovieTab from "./searchMovie";
+
+export class MoviePanel extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {};
   }
 
-  openNotification = (description = "", type = "success", duration = 5) => {
-    const args = {
-      message: "Notification",
-      description,
-      duration,
-    };
-    notification[type](args);
-  };
-
-  onFinish = (values) => {};
-
-  onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
-  };
-
   render() {
-    return <>Hello World</>;
+    return (
+      <>
+        <Select></Select>
+        <Tabs type="card">
+          <Tabs.TabPane tab="Movies Tab" key="1">
+            <SearchMovieTab />
+          </Tabs.TabPane>
+        </Tabs>
+      </>
+    );
   }
 }
 
-export default SearchMovie;
+export default SearchMovieTab;
