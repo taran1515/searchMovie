@@ -1,7 +1,7 @@
 import Fetch from "../utils/helper";
 
 export const handleMovieSearch = async (data) => {
-  const url = `http://localhost:4000/search/movie`;
+  const url = `http://localhost:4000/api/v1/search/movie`;
 
   const response = await Fetch.request({
     method: "POST",

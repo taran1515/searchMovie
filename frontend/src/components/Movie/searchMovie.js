@@ -21,7 +21,6 @@ export class SearchMovieTab extends React.Component {
 
   fetchMovies = async () => {
     const { searchKeyword, offset, limit } = this.state;
-    console.log("searchKeyword", searchKeyword);
     if (searchKeyword.length === 0) {
       return;
     }
@@ -40,7 +39,7 @@ export class SearchMovieTab extends React.Component {
       this.openNotification("Successfully Fetch Movies");
     } else {
       this.openNotification(
-        "Could not find any movie with given title",
+        data.message ?? "Could not find any movie with given title",
         "error"
       );
     }
