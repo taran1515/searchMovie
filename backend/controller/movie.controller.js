@@ -1,5 +1,4 @@
 const { searchMovies } = require("../service/movie.service");
-const { validate, ValidationError, Joi } = require("express-validation");
 const {
   CREATED_HTTP_STATUS_CODE,
   BAD_REQUEST_HTTP_STATUS_CODE,

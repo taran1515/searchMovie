@@ -28,7 +28,7 @@ const searchMovies = async (searchKeyword, limit, offset) => {
 
     const movies = [];
 
-    movieTitle.map((m) =>
+    movieTitle.forEach((m) =>
       movies.push({
         title: m[1],
         searchKeyword: m[0],
@@ -39,10 +39,6 @@ const searchMovies = async (searchKeyword, limit, offset) => {
   } else {
     return { movies };
   }
-};
-
-module.exports = {
-  searchMovies,
 };
 
 const searchMovieFromApi = async (searchKeyword) => {
@@ -79,4 +75,8 @@ const searchMovieFromApi = async (searchKeyword) => {
   } catch (err) {
     return { movieTitle: [] };
   }
+};
+
+module.exports = {
+  searchMovies,
 };
